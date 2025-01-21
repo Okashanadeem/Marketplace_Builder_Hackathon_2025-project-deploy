@@ -56,7 +56,7 @@ const CartPage = () => {
                             >
                                 <div className="flex items-center gap-6">
                                     <Image
-                                        src={item.imageUrl}
+                                        src={item.productImage}
                                         alt={item.title}
                                         className="rounded-lg"
                                         width={80}

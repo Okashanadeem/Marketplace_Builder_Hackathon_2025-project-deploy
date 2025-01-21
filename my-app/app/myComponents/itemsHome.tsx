@@ -34,7 +34,7 @@ export default function ItemsPage() {
   return (
     <div className="w-full px-6 py-10 md:px-12 lg:px-16 bg-gray-50">
       <h2 className="text-center text-2xl md:text-4xl font-bold text-gray-800 mb-8">
-        Our Featured Products
+        Our Latest Products
       </h2>
 
       {/* Items List */}

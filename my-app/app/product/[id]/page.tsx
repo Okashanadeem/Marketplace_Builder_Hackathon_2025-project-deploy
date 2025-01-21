@@ -4,6 +4,7 @@ import { client } from '../../../sanity/lib/client';
 import { notFound } from 'next/navigation';
 import CartButton from './CartButton';
 import Link from 'next/link';
+import ItemsPage from '@/app/myComponents/itemsHome';
 
 interface Product {
     _id: string;
@@ -91,22 +92,23 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
                         </span>
                     )}
 
-                    {/* Tags */}
-                    {product.tags?.length > 0 && (
-                        <div className="mt-6">
-                            <h2 className="text-sm text-gray-500 mb-2">Tags</h2>
-                            <div className="flex gap-4">
-                                {product.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="border border-gray-300 px-4 py-1 rounded-lg text-sm"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
+                 {/* Tags */}
+{product.tags?.length > 0 && (
+    <div className="mt-6">
+        <h2 className="text-sm text-gray-500 mb-2">Tags</h2>
+        <div className="flex flex-wrap gap-4">
+            {product.tags.map((tag) => (
+                <span
+                    key={tag}
+                    className="border border-gray-300 px-4 py-1 rounded-lg text-sm"
+                >
+                    {tag}
+                </span>
+            ))}
+        </div>
+    </div>
+)}
+
 
                     {/* Sizes
                     <div className="mt-6">
@@ -181,7 +183,7 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
             <hr className="my-8" />
 
             {/* Additional Info */}
-            <div className="px-8 lg:px-16">
+            <div className="px-8 lg:px-16 pb-4">
                 <div className="flex justify-around mb-8">
                     <p className="text-black text-lg font-medium cursor-pointer">Description</p>
                     <p className="text-gray-500 text-lg cursor-pointer">Additional Info</p>
@@ -192,6 +194,8 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
                     <p className="mt-6 text-gray-700">{product.description}</p>
                 </div>
             </div>
+
+            <ItemsPage/>
 
             <Footer />
         </div>

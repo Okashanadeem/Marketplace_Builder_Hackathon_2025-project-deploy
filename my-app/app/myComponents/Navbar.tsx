@@ -49,7 +49,6 @@ const Navbar = () => {
           <Link href="/account" className="text-lg text-gray-800 hover:text-[#8d7d47] active:text-blue-700 transition-colors duration-300">
             <UserX className="w-7 h-7" />
           </Link>
-          <Search className="w-7 h-7 text-gray-800 hover:text-[#8d7d47] active:text-blue-700 transition-colors duration-300" />
           <Heart className="w-7 h-7 text-gray-800 hover:text-[#8d7d47] active:text-blue-700 transition-colors duration-300" />
           <Link href="/cart" className="text-lg text-gray-800 hover:text-[#8d7d47] active:text-blue-700 transition-colors duration-300">
             <ShoppingCart className="w-7 h-7" />

@@ -7,7 +7,7 @@ interface CartButtonProps {
         _id: string;
         title: string;
         price: number;
-        imageUrl: string;
+        productImage: string;
     };
 }
 
@@ -19,7 +19,7 @@ const CartButton = ({ product }: CartButtonProps) => {
             _id: product._id,
             title: product.title,
             price: product.price,
-            imageUrl: product.imageUrl,
+            productImage: product.productImage,
             quantity: 1,
         });
         alert('Product added successfully');

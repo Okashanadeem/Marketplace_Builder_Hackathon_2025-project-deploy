@@ -178,8 +178,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center text-white text-center p-5">
             <h1 className="text-4xl font-extrabold text-black">Our Instagram</h1>
             <p className="mt-2 text-black">Follow our store on Instagram</p>
+            <Link target="https://www.instagram.com/kasha_8282/" href={"https://www.instagram.com/kasha_8282/"}>
             <button className="flex items-center justify-center w-full sm:w-[215px] h-[48px] border border-black mt-4 
                             hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 bg-white text-black rounded-full shadow-lg">Follow Us</button>
+                            </Link>
           </div>
         </div>
         <Footer />

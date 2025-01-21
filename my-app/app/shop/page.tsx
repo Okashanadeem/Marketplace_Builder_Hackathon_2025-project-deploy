@@ -24,25 +24,6 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className='bg-[#FAF4F4] md:h-[100px] h-auto py-5 flex flex-col md:flex-row justify-between items-center px-4 md:px-8 lg:px-16 '>
-                <div className='flex items-center gap-5 '>
-                    <p className='flex gap-3'><SlidersHorizontal /> Filter</p>
-                    <Grip />
-                    <Fullscreen />
-                    <p className='border-l-2 pl-4'>Showing 1 to 16 of 32 results</p>
-                </div>
-                <div className='flex items-center gap-5 mt-4 md:mt-0'>
-                    <p>Show</p>
-                    <div className='bg-white w-[55px] h-[55px] flex justify-center items-center rounded'>
-                        <p className='text-[#9F9F9F]'>16</p>
-                    </div>
-                    <p>Sort by</p>
-                    <div className='bg-white w-[185px] h-[55px] flex justify-center items-center rounded'>
-                        <p className='text-[#9F9F9F]'>Default</p>
-                    </div>
-                </div>
-            </div>
-
             <ItemsPage />
 
             <div className='flex justify-center gap-4 mb-10'>
