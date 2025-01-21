@@ -52,7 +52,7 @@ export default function Home() {
             <h3 className="text-2xl font-semibold text-center">Top Picks For You</h3>
             <p className="text-[#9F9F9F] text-center">Find a bright ideal to suit your taste with our great selection of suspension, floor and table lights.</p>
           </div>
-          <ItemsPage/>
+          <ItemsPage />
         </div>
 
         {/* New Arrivals */}
@@ -141,16 +141,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 text-center flex justify-center">
-            <Link
-              href="https://giaic-milestone-03-blog-site-by-okasha-nadeem.vercel.app/"
-              className="flex items-center justify-center w-full sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
-                            hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Follow Us
-            </Link>
+          {/* instagram follow  */}
+          <div className="bg-cover bg-center bg-fixed bg-[url('/images/Rectangle%2017.png')]  mt-12 pt-20 pb-24">
+            <div className="flex flex-col items-center justify-center text-white text-center p-5">
+              <h1 className="text-4xl font-extrabold text-black">Our Instagram</h1>
+              <p className="mt-2 text-black">Follow our store on Instagram</p>
+              <Link target="https://www.instagram.com/kasha_8282/" href={"https://www.instagram.com/kasha_8282/"}>
+                <button className="flex items-center justify-center w-[215px] sm:w-[215px] h-[48px] border border-black mt-4 
+                            hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 bg-white text-black rounded-full shadow-lg">Follow Us</button>
+              </Link>
+            </div>
           </div>
         </div>
 
