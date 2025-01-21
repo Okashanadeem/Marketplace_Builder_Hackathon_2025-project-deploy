@@ -12,7 +12,7 @@ const Navbar = () => {
       <MobileNavbar />
 
       {/* Desktop Navbar */}
-      <div className="hidden md:flex h-[70px] w-full justify-between items-center px-8 bg-gradient-to-r from-blue-50 via-blue-100 to-white shadow-lg text-black">
+      <div className="hidden md:flex h-[60px] w-full justify-between items-center px-8 bg-gradient-to-r from-blue-50 via-blue-100 to-white shadow-lg text-black">
         {/* Brand Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2 font-bold text-2xl text-gray-800 hover:text-blue-600 transition-colors duration-300">
@@ -30,16 +30,16 @@ const Navbar = () => {
         <div>
           <ul className="flex gap-12">
             <li>
-              <Link href="/" className="text-lg font-medium text-gray-800 hover:text-[#36301c] active:text-blue-700 transition-colors duration-300">Home</Link>
+              <Link href="/" className="text-lg font-medium text-gray-800 hover:text-[#867747] active:text-blue-700 transition-colors duration-300">Home</Link>
             </li>
             <li>
-              <Link href="/shop" className="text-lg font-medium text-gray-800 hover:text-[#36301c]active:text-blue-700 transition-colors duration-300">Shop</Link>
+              <Link href="/shop" className="text-lg font-medium text-gray-800 hover:text-[#867747] active:text-blue-700 transition-colors duration-300">Shop</Link>
             </li>
             <li>
-              <Link href="/about" className="text-lg font-medium text-gray-800 hover:text-[#36301c]active:text-blue-700 transition-colors duration-300">About</Link>
+              <Link href="/about" className="text-lg font-medium text-gray-800 hover:text-[#867747] active:text-blue-700 transition-colors duration-300">About</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-lg font-medium text-gray-800 hover:text-[#36301c]active:text-blue-700 transition-colors duration-300">Contact</Link>
+              <Link href="/contact" className="text-lg font-medium text-gray-800 hover:text-[#867747] active:text-blue-700 transition-colors duration-300">Contact</Link>
             </li>
           </ul>
         </div>

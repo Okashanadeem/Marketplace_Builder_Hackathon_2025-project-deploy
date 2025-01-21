@@ -12,22 +12,21 @@ const CartPage = () => {
 
     return (
         <div>
-
-<Navbar />
+            <Navbar />
             <div
-                className="bg-cover bg-center bg-fixed pt-20 pb-24 "
+                className="bg-cover bg-center bg-fixed pt-20 pb-24"
                 style={{
                     backgroundImage: "url('/images/Rectangle 1.png')",
                 }}
             >
-                <div className="flex flex-col items-center justify-center h-full px-4 md:px-8 lg:px-16">
-                    <Image src={logo} alt='Logo' />
-                    <h1 className='text-4xl'>Cart</h1>
-                    <p className='flex'>Shop<ChevronRight /> Cart</p>
+                <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 md:px-16">
+                    <Image src={logo} alt='Logo' width={160} height={160} />
+                    <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-black mt-4'>Cart</h1>
+                    <p className='flex text-black mt-2'>Shop<ChevronRight /> Cart</p>
                 </div>
             </div>
 
-            <div className="p-8 bg-gray-50 min-h-screen">
+            <div className="p-4 sm:p-8 bg-gray-50 min-h-screen">
                 {cart.length === 0 ? (
                     <div className="flex flex-col items-center justify-center mt-20">
                         <Image
@@ -40,21 +39,21 @@ const CartPage = () => {
                         <p className="text-lg font-semibold text-gray-600">Your cart is empty.</p>
                         <a
                             href="/shop"
-                            className="flex items-center justify-center w-full sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
-               hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 mb-8"
+                            className="flex items-center justify-center w-fit px-2 sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
+                            hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 mb-8"
                         >
                             Start Shopping
                         </a>
-                        <Footer/>
+                        <Footer />
                     </div>
                 ) : (
                     <div className="space-y-6">
                         {cart.map((item) => (
                             <div
                                 key={item._id}
-                                className="flex items-center justify-between bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition"
+                                className="flex flex-col sm:flex-row items-center justify-between bg-white shadow-md rounded-lg p-4 sm:p-6 hover:shadow-lg transition"
                             >
-                                <div className="flex items-center gap-6">
+                                <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-0">
                                     <Image
                                         src={item.productImage}
                                         alt={item.title}
@@ -63,9 +62,7 @@ const CartPage = () => {
                                         height={80}
                                     />
                                     <div>
-                                        <h2 className="text-xl font-semibold text-gray-700">
-                                            {item.title}
-                                        </h2>
+                                        <h2 className="text-xl font-semibold text-gray-700">{item.title}</h2>
                                         <p className="text-gray-500">
                                             ${item.price} x {item.quantity}
                                         </p>
@@ -75,7 +72,7 @@ const CartPage = () => {
                                     </div>
                                 </div>
                                 <button
-                                    className="px-4 py-2 text-red-500 bg-red-100 rounded-lg hover:bg-red-200 transition"
+                                    className="px-4 py-2 text-red-500 bg-red-100 rounded-lg hover:bg-red-200 transition w-full sm:w-auto"
                                     onClick={() => removeFromCart(item._id)}
                                 >
                                     Remove
@@ -86,9 +83,9 @@ const CartPage = () => {
                 )}
 
                 {cart.length > 0 && (
-                    <div className="mt-10 bg-white shadow-lg rounded-lg p-6">
-                        <h2 className="text-2xl font-bold text-gray-800">Order Summary</h2>
-                        <div className="flex justify-between items-center mt-4 text-lg">
+                    <div className="mt-10 bg-white shadow-lg rounded-lg p-6 sm:p-8">
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Order Summary</h2>
+                        <div className="flex flex-col sm:flex-row justify-between items-center mt-4 text-lg sm:text-xl">
                             <span className="font-medium text-gray-600">Subtotal:</span>
                             <span className="font-bold text-gray-800">
                                 $

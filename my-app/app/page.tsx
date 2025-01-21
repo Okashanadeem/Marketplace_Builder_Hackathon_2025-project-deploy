@@ -85,7 +85,7 @@ export default function Home() {
           <div className="w-auto md:w-[331px] flex flex-col items-center md:items-start justify-center ">
             <p className="text-2xl text-center md:text-left">New Arrivals</p>
             <h3 className="text-4xl font-extrabold text-center md:text-left">Asgaard Sofa</h3>
-            <button className="border border-black rounded mt-5 w-48 h-11 bg-black text-white">
+            <button className="border border-black rounded mt-5 mb-7 w-48 h-11 bg-black text-white">
               <Link href="/shop" className="text-lg font-medium hover:text-[#FBEBB5]">Order Now</Link>
             </button>
           </div>
@@ -108,7 +108,7 @@ export default function Home() {
               <Image src={boximg1} alt="Blog 1" className="w-full h-56 object-cover mb-4 " />
               <div className="p-4">
                 <p className="text-lg font-semibold text-gray-800 mb-2 text-center">Going all-in with millennial design</p>
-                <p className="mb-4 text-xl text-[#4c4837] cursor-pointer text-center transition duration-200">Read More</p>
+                <p className="mb-4 text-xl text-[#4c4837] cursor-pointer text-center transition duration-200"><Link href={"https://giaic-milestone-03-blog-site-by-okasha-nadeem.vercel.app/"}>Read More</Link></p>
                 <div className="flex gap-4 justify-center pt-1 text-sm text-gray-500">
                   <span className="flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
@@ -127,7 +127,7 @@ export default function Home() {
               <Image src={boximg2} alt="Blog 2" className="w-full h-56 object-cover mb-4 " />
               <div className="p-4">
                 <p className="text-lg font-semibold text-gray-800 mb-2 text-center">Going all-in with millennial design</p>
-                <p className="mb-4 text-xl text-[#4c4837]  cursor-pointer text-center transition duration-200 ">Read More</p>
+                <p className="mb-4 text-xl text-[#4c4837]  cursor-pointer text-center transition duration-200 "><Link href={"https://giaic-milestone-03-blog-site-by-okasha-nadeem.vercel.app/"}>Read More</Link></p>
                 <div className="flex gap-4 justify-center pt-1 text-sm text-gray-500">
                   <span className="flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
@@ -146,7 +146,7 @@ export default function Home() {
               <Image src={boximg3} alt="Blog 3" className="w-full h-56 object-cover mb-4 " />
               <div className="p-4">
                 <p className="text-lg font-semibold text-gray-800 mb-2 text-center">Going all-in with millennial design</p>
-                <p className="mb-4 text-xl cursor-pointer text-center transition duration-200 text-[#4c4837]">Read More</p>
+                <p className="mb-4 text-xl cursor-pointer text-center transition duration-200 text-[#4c4837]"><Link href={"https://giaic-milestone-03-blog-site-by-okasha-nadeem.vercel.app/"}>Read More</Link></p>
                 <div className="flex gap-4 justify-center pt-1 text-sm text-gray-500">
                   <span className="flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
@@ -179,7 +179,7 @@ export default function Home() {
             <h1 className="text-4xl font-extrabold text-black">Our Instagram</h1>
             <p className="mt-2 text-black">Follow our store on Instagram</p>
             <Link target="https://www.instagram.com/kasha_8282/" href={"https://www.instagram.com/kasha_8282/"}>
-            <button className="flex items-center justify-center w-full sm:w-[215px] h-[48px] border border-black mt-4 
+            <button className="flex items-center justify-center w-[215px] sm:w-[215px] h-[48px] border border-black mt-4 
                             hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 bg-white text-black rounded-full shadow-lg">Follow Us</button>
                             </Link>
           </div>
