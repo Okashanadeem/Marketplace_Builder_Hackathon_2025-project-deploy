@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../myComponents/Navbar';
 import Image from 'next/image';
 import logo from '../../public/images/Meubel House_Logos-05.png';
 import { ChevronRight, Clock, MapPin, Phone } from 'lucide-react';
@@ -8,7 +7,6 @@ import Footer from '../myComponents/footer';
 const Page = () => {
     return (
         <div>
-            <Navbar />
             {/* Hero Section */}
             <div
                 className="bg-cover bg-center bg-fixed pt-20 pb-24 mb-10"
@@ -17,7 +15,7 @@ const Page = () => {
                 }}
             >
                 <div className="flex flex-col items-center justify-center h-full px-4 md:px-8 lg:px-16">
-                    <Image src={logo} alt='Logo' />
+                    <Image src={logo} alt='Logo' width={160} height={160} />
                     <h1 className="text-4xl">Contact</h1>
                     <p className="flex items-center text-sm">
                         Home <ChevronRight /> Contact
@@ -43,8 +41,8 @@ const Page = () => {
                         <div>
                             <h1 className="font-bold">Address</h1>
                             <p>
-                                236 5th SE Avenue, New <br />
-                                York NY10000, United States
+                                G223 M.T Khan Road <br />
+                                Sultanabd Karachi Pakistan
                             </p>
                         </div>
                     </div>
@@ -53,8 +51,7 @@ const Page = () => {
                         <div>
                             <h1 className="font-bold">Phone</h1>
                             <p>
-                                Mobile: +84 546-6789 <br />
-                                Hotline: +84 456-6789
+                                Mobile: +92 341 2342629 
                             </p>
                         </div>
                     </div>
@@ -78,6 +75,7 @@ const Page = () => {
                             type="text"
                             placeholder="Abc"
                             className="border w-full md:w-[345px] h-[50px] rounded p-2"
+                            aria-label="Your Name"
                         />
                     </div>
                     <div>
@@ -86,6 +84,7 @@ const Page = () => {
                             type="email"
                             placeholder="Abc@def.com"
                             className="border w-full md:w-[345px] h-[50px] rounded p-2"
+                            aria-label="Email Address"
                         />
                     </div>
                     <div>
@@ -94,6 +93,7 @@ const Page = () => {
                             type="text"
                             placeholder="This is optional"
                             className="border w-full md:w-[345px] h-[50px] rounded p-2"
+                            aria-label="Subject"
                         />
                     </div>
                     <div>
@@ -101,10 +101,11 @@ const Page = () => {
                         <textarea
                             placeholder="Hi! I would like to ask about..."
                             className="border w-full md:w-[345px] h-[90px] rounded p-2"
+                            aria-label="Message"
                         />
                     </div>
                     <button className="flex items-center justify-center w-full sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
-               hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
+               hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105" aria-label="Submit Contact Form">
                         Submit
                     </button>
                 </div>

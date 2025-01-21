@@ -1,10 +1,10 @@
-import Navbar from '@/app/myComponents/Navbar';
 import Footer from '@/app/myComponents/footer';
 import { client } from '../../../sanity/lib/client';
 import { notFound } from 'next/navigation';
 import CartButton from './CartButton';
 import Link from 'next/link';
 import ItemsPage from '@/app/myComponents/itemsHome';
+import Head from 'next/head';
 
 interface Product {
     _id: string;
@@ -61,7 +61,11 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
 
     return (
         <div>
-            <Navbar />
+            <Head>
+                <title>{product.title} | Your Store Name</title>
+                <meta name="description" content={product.description} />
+            </Head>
+
             <div className="flex flex-col lg:flex-row p-8 gap-8 lg:gap-16">
                 {/* Image Section */}
                 <div className="lg:w-1/2 flex justify-center">
@@ -92,79 +96,22 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
                         </span>
                     )}
 
-                 {/* Tags */}
-{product.tags?.length > 0 && (
-    <div className="mt-6">
-        <h2 className="text-sm text-gray-500 mb-2">Tags</h2>
-        <div className="flex flex-wrap gap-4">
-            {product.tags.map((tag) => (
-                <span
-                    key={tag}
-                    className="border border-gray-300 px-4 py-1 rounded-lg text-sm"
-                >
-                    {tag}
-                </span>
-            ))}
-        </div>
-    </div>
-)}
-
-
-                    {/* Sizes
-                    <div className="mt-6">
-                        <h2 className="text-sm text-gray-500 mb-2">Size</h2>
-                        <div className="flex gap-4">
-                            {['S', 'M', 'L', 'XL'].map((size) => (
-                                <label
-                                    key={size}
-                                    htmlFor={size}
-                                    className="flex items-center gap-2 cursor-pointer"
-                                >
-                                    <input
-                                        type="radio"
-                                        id={size}
-                                        name="size"
-                                        value={size}
-                                        className="hidden"
-                                    />
-                                    <span className="border px-4 py-1 rounded-lg text-sm">
-                                        {size}
-                                    </span>
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-
-                    // colors
-                    <div className="mt-6">
-                        <h2 className="text-sm text-gray-500 mb-2">Color</h2>
-                        <div className="flex gap-4">
-                            {[
-                                { name: 'Purple', color: 'bg-purple-500' },
-                                { name: 'Black', color: 'bg-black' },
-                                { name: 'Peach', color: 'bg-peachpuff' },
-                            ].map(({ name, color }) => (
-                                <label
-                                    key={name}
-                                    htmlFor={name}
-                                    className="flex items-center gap-2 cursor-pointer"
-                                >
-                                    <input
-                                        type="radio"
-                                        id={name}
-                                        name="color"
-                                        value={name}
-                                        className="hidden"
-                                    />
+                    {/* Tags */}
+                    {product.tags?.length > 0 && (
+                        <div className="mt-6">
+                            <h2 className="text-sm text-gray-500 mb-2">Tags</h2>
+                            <div className="flex flex-wrap gap-4">
+                                {product.tags.map((tag) => (
                                     <span
-                                        className={`w-6 h-6 rounded-full border ${color}`}
-                                        title={name}
-                                    ></span>
-                                </label>
-                            ))}
+                                        key={tag}
+                                        className="border border-gray-300 px-4 py-1 rounded-lg text-sm"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                    </div> */}
-                    
+                    )}
 
                     {/* Buttons */}
                     <div className="mt-8 flex gap-4">
@@ -190,12 +137,11 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
                     <p className="text-gray-500 text-lg cursor-pointer">Reviews (5)</p>
                 </div>
                 <div className="text-gray-600 leading-relaxed">
-                    {/* Description */}
                     <p className="mt-6 text-gray-700">{product.description}</p>
                 </div>
             </div>
 
-            <ItemsPage/>
+            <ItemsPage />
 
             <Footer />
         </div>

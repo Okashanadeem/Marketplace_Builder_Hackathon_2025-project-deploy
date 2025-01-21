@@ -3,7 +3,6 @@ import Image from 'next/image';
 import emptycart from "@/public/images/empty cart.png";
 import logo from '../../public/images/Meubel House_Logos-05.png';
 import { useCart } from '@/app/context/CartContext';
-import Navbar from '../myComponents/Navbar';
 import { ChevronRight } from 'lucide-react';
 import Footer from '../myComponents/footer';
 
@@ -12,7 +11,6 @@ const CartPage = () => {
 
     return (
         <div>
-            <Navbar />
             <div
                 className="bg-cover bg-center bg-fixed pt-20 pb-24"
                 style={{
@@ -41,6 +39,7 @@ const CartPage = () => {
                             href="/shop"
                             className="flex items-center justify-center w-fit px-2 sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
                             hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 mb-8"
+                            aria-label="Start Shopping"
                         >
                             Start Shopping
                         </a>
@@ -74,6 +73,7 @@ const CartPage = () => {
                                 <button
                                     className="px-4 py-2 text-red-500 bg-red-100 rounded-lg hover:bg-red-200 transition w-full sm:w-auto"
                                     onClick={() => removeFromCart(item._id)}
+                                    aria-label={`Remove ${item.title} from cart`}
                                 >
                                     Remove
                                 </button>
@@ -88,7 +88,7 @@ const CartPage = () => {
                         <div className="flex flex-col sm:flex-row justify-between items-center mt-4 text-lg sm:text-xl">
                             <span className="font-medium text-gray-600">Subtotal:</span>
                             <span className="font-bold text-gray-800">
-                                $
+                                $ 
                                 {cart
                                     .reduce((total, item) => total + item.price * item.quantity, 0)
                                     .toFixed(2)}
@@ -96,7 +96,8 @@ const CartPage = () => {
                         </div>
                         <button
                             className="mt-6 w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-                            onClick={() => alert('Proceed to Checkout')}
+                            onClick={() => alert('Proceed to Checkout')} // Update this to navigate to checkout page
+                            aria-label="Proceed to Checkout"
                         >
                             Checkout
                         </button>
