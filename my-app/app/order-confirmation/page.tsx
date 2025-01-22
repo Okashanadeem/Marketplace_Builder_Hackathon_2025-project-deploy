@@ -32,7 +32,7 @@ const OrderConfirmationPage = () => {
 
             <div className="mt-8">
                 <Link href="/" passHref>
-                    <button className="w-full sm:w-[215px] h-[48px] bg-black text-white rounded-full shadow-lg hover:bg-gray-800 transition duration-300 ease-in-out transform hover:scale-105">
+                    <button className="w-full sm:w-[215px] h-[48px] px-2 bg-black text-white rounded-full shadow-lg hover:bg-gray-800 transition duration-300 ease-in-out transform hover:scale-105">
                         Back to Home Page
                     </button>
                 </Link>
