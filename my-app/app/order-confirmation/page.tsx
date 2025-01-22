@@ -1,9 +1,26 @@
 'use client';
 
+import React, { useEffect, useState } from "react";
+import { useCart } from '@/app/context/CartContext'; // Ensure CartContext is available
 import Link from "next/link";
 import Footer from "../myComponents/footer";
 
+// Make sure to import CartItem type
+import { CartItem } from "@/app/context/CartContext";
+
 const OrderConfirmationPage = () => {
+    const { cart } = useCart();
+    const [orderSummary, setOrderSummary] = useState<CartItem[]>([]);
+
+    useEffect(() => {
+        setOrderSummary(cart);
+    }, [cart]);
+
+    // Calculate the total price
+    const calculateTotal = (cartItems: CartItem[]) => {
+        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    };
+
     return (
         <div className="p-6 sm:p-12 bg-gray-50 min-h-screen flex flex-col justify-center items-center">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">Order Confirmed</h1>
@@ -12,18 +29,16 @@ const OrderConfirmationPage = () => {
             <div className="mt-8 w-full max-w-2xl bg-white p-6 rounded-lg shadow-md">
                 <p className="text-lg font-medium text-gray-800">Order Summary:</p>
                 <div className="mt-4 space-y-4">
-                    {/* Example of order summary */}
-                    <div className="flex justify-between">
-                        <span className="text-gray-700">Product Name 1</span>
-                        <span className="text-gray-700">$25.00</span>
-                    </div>
-                    <div className="flex justify-between">
-                        <span className="text-gray-700">Product Name 2</span>
-                        <span className="text-gray-700">$15.00</span>
-                    </div>
+                    {/* Render each product in the cart */}
+                    {orderSummary.map((item: CartItem) => (
+                        <div key={item._id} className="flex justify-between">
+                            <span className="text-gray-700">{item.title}</span>
+                            <span className="text-gray-700">${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    ))}
                     <div className="flex justify-between mt-4">
                         <span className="font-semibold text-gray-800">Total</span>
-                        <span className="font-semibold text-gray-800">$40.00</span>
+                        <span className="font-semibold text-gray-800">${calculateTotal(orderSummary).toFixed(2)}</span>
                     </div>
                 </div>
                 
@@ -38,7 +53,7 @@ const OrderConfirmationPage = () => {
                 </Link>
                 <p className="mt-4 text-sm text-center mb-4 text-gray-500">Or visit us on <Link href="https://www.instagram.com/kasha_8282/" className="text-blue-600 hover:underline">Instagram</Link></p>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
