@@ -5,6 +5,7 @@ import logo from '../../public/images/Meubel House_Logos-05.png';
 import { useCart } from '@/app/context/CartContext';
 import { ChevronRight } from 'lucide-react';
 import Footer from '../myComponents/footer';
+import Link from 'next/link';
 
 const CartPage = () => {
     const { cart, removeFromCart } = useCart();
@@ -35,14 +36,14 @@ const CartPage = () => {
                             height={160}
                         />
                         <p className="text-lg font-semibold text-gray-600">Your cart is empty.</p>
-                        <a
+                        <Link
                             href="/shop"
                             className="flex items-center justify-center w-fit px-2 sm:w-[215px] h-[48px] border border-black rounded-xl mt-4 
                             hover:bg-black hover:text-white transition duration-300 ease-in-out transform hover:scale-105 mb-8"
                             aria-label="Start Shopping"
                         >
                             Start Shopping
-                        </a>
+                        </Link>
                         <Footer />
                     </div>
                 ) : (
@@ -88,19 +89,20 @@ const CartPage = () => {
                         <div className="flex flex-col sm:flex-row justify-between items-center mt-4 text-lg sm:text-xl">
                             <span className="font-medium text-gray-600">Subtotal:</span>
                             <span className="font-bold text-gray-800">
-                                $ 
+                                $
                                 {cart
                                     .reduce((total, item) => total + item.price * item.quantity, 0)
                                     .toFixed(2)}
                             </span>
                         </div>
-                        <button
-                            className="mt-6 w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-                            onClick={() => alert('Proceed to Checkout')} // Update this to navigate to checkout page
-                            aria-label="Proceed to Checkout"
-                        >
-                            Checkout
-                        </button>
+                        <Link href="/checkout">
+                            <div
+                                className="mt-6 w-full py-3 bg-blue-500 pl-3 text-white rounded-lg hover:bg-blue-600 transition"
+                                aria-label="Proceed to Checkout"
+                            >
+                                Checkout
+                            </div>
+                        </Link>
                     </div>
                 )}
             </div>
